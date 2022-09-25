@@ -1,9 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&display=swap');
+
 
 :root{
     --cor-primaria : #39574C;
     --cor-secundaria: #79E3BD;
     --hover: #56BB97;
+
+    /* font */
+    --font-logo: 'Philosopher', sans-serif;
 }
 
 *{
@@ -22,6 +27,14 @@ body{
     grid-template-areas: 'header header' 'nav main' 'footer footer';
 }
 
+.container{
+    position: relative;
+    width: min(90% , 1200px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 header{
     position: relative;
     width: 100%;
@@ -29,12 +42,20 @@ header{
     grid-area: header;
     background-color: var(--cor-primaria);
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 
+header .logo {
+    color: var(--cor-secundaria);
+    font-family: var(--font-logo);
+    font-size: 32px;
+}
+
 footer{
-    position: relative;
+    position: fixed;
+    bottom: 0;
+    left: 0;
     width: 100%;
     height: 40px;
     grid-area: footer;
@@ -44,25 +65,23 @@ footer{
     background-color: var(--cor-primaria);
 }
 
-nav{
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background-color: var(--cor-secundaria);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    grid-area: main;
-}
-
-
-.navigation{
+nav.navigation{
     position: fixed;
+    top:70px;
     left: 0;
-    width: 300px;
-    height: 100%;
-    background-color: var(--dark-blue);
+    
+    width: 250px;
+    height: calc(100% - 110px);
     transition: 0.5s;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    grid-area: nav;
+    background-color: var(--cor-secundaria);
+    padding: 10px 0;
+
     overflow: hidden;
 }
 
@@ -71,10 +90,13 @@ nav{
     transition: 0.5s;
 }
 
+nav.navigation .home-icon {
+    margin-right: 20px;
+    color: var(--cor-primaria);
+    font-size: 22px;
+}
+
 .navigation ul{
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
 }
 
@@ -82,10 +104,15 @@ nav{
     position: relative;
     width: 100%;
     list-style: none;
+    transition: 0.5s;
+    padding: 5px 20px;
 }
 
 .navigation ul li:hover{
-    background-color: var(--light-blue);
+    background-color: var(--cor-primaria);
+    color: var(--hover);
+    transition: 0.5s;
+    padding: 5px 25px;
 }
 
 .navigation ul li:nth-child(1){
@@ -131,3 +158,19 @@ nav{
     height: 60px;
 }
 
+.main{
+    position: absolute;
+    top: 70px;
+    width: calc(100% - 250px);
+    left: 250px;
+    min-height: calc(100vh - 110px);
+    background-color: var(--white-bg);
+    transition: 0.5s;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.main.active{
+    width: calc(100% - 60px);
+    left: 60px;
+}

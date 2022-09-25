@@ -1,5 +1,7 @@
 <nav class="navigation">
-    <a href="#" class="home-icon"></a>
+    <a href="#" class="home-icon">
+        <i class="fas fa-bars"></i>
+    </a>
     <ul class="nav-menu">
         <li><a href="#">Registrar Venda</a></li>
         <li><a href="#">Clientes</a></li>
