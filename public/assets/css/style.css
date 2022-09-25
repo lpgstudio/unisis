@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700;900&display=swap');
 
 :root{
-
+    --cor-primaria : #39574C;
+    --cor-secundaria: #79E3BD;
+    --hover: #56BB97;
 }
 
 *{
@@ -13,4 +15,119 @@
 
 body{
     background-color: #f0f0f0;
+    width: 100%;
+    height: 100vh;
+    display:grid;
+    grid-template-columns: 250px 1fr;
+    grid-template-areas: 'header header' 'nav main' 'footer footer';
 }
+
+header{
+    position: relative;
+    width: 100%;
+    height: 70px;
+    grid-area: header;
+    background-color: var(--cor-primaria);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer{
+    position: relative;
+    width: 100%;
+    height: 40px;
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--cor-primaria);
+}
+
+nav{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: var(--cor-secundaria);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: main;
+}
+
+
+.navigation{
+    position: fixed;
+    left: 0;
+    width: 300px;
+    height: 100%;
+    background-color: var(--dark-blue);
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.navigation.active{
+    width: 60px;
+    transition: 0.5s;
+}
+
+.navigation ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.navigation ul li{
+    position: relative;
+    width: 100%;
+    list-style: none;
+}
+
+.navigation ul li:hover{
+    background-color: var(--light-blue);
+}
+
+.navigation ul li:nth-child(1){
+    background-color: transparent;
+    margin-bottom: 20px;
+}
+
+.navigation ul li a{
+    position: relative;
+    width: 100%;
+    display:flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--white);
+}
+
+.navigation ul li a .icon{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    text-align: center;
+}
+
+.navigation ul li a .icon i{
+    font-size: 24px;
+}
+
+.navigation ul li a .title{
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    white-space: nowrap;
+}
+
+.navigation ul li:nth-child(1) a{
+    margin-top: 10px;
+}
+
+.navigation ul li:nth-child(1) a .title{
+    margin-top: 10px;
+    height: 60px;
+}
+

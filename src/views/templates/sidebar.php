@@ -1,4 +1,4 @@
-<nav>
+<nav class="navigation">
     <a href="#" class="home-icon"></a>
     <ul class="nav-menu">
         <li><a href="#">Registrar Venda</a></li>
