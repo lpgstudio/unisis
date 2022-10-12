@@ -7,6 +7,14 @@
     font-family: 'Poppins', sans-serif;
 }
 
+body{
+    background-color: #e5e5e5;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 section.login{
     position: relative;
     min-height: 100vh;

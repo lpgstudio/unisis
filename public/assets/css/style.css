@@ -35,6 +35,26 @@ body{
     align-items: center;
 }
 
+button{
+    font-family: var(--font-logo);
+    font-size: 17px;
+    background:var(--cor-primaria);
+    color:var(--cor-secundaria);
+    border: 1px solid var(--cor-primaria);
+    border-radius:5px;
+    padding: 7px 15px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+button:hover{
+    background:var(--cor-secundaria);
+    color:var(--cor-primaria);
+    font-weight: 700;
+    border: 1px solid var(--cor-primaria);
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
 header{
     position: relative;
     width: 100%;
@@ -163,7 +183,7 @@ nav.navigation .home-icon {
     top: 70px;
     width: calc(100% - 250px);
     left: 250px;
-    min-height: calc(100vh - 110px);
+    height: calc(100vh - 110px);
     background-color: var(--white-bg);
     transition: 0.5s;
     overflow-y: auto;
@@ -174,3 +194,63 @@ nav.navigation .home-icon {
     width: calc(100% - 60px);
     left: 60px;
 }
+
+/* Cadastro cliente */
+#criar-cliente .container h2{
+    position: relative;
+    font-family: var(--font-logo);
+    font-weight: 700;
+    font-size: 26px;
+    color: var(--cor-primaria);
+    margin: 30px 0;
+}
+#criar-cliente .container h2::after{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 70px;
+    height: 3px;
+    background-color: var(--cor-secundaria);
+}
+
+#criar-cliente .container{
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+#criar-cliente .container form.formBx {
+    width: 60%;
+    text-align: center;
+}
+
+
+.input {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.input label {
+    font-size: 12px;
+    color: #333;
+    margin-right: 15px;
+}
+
+.input input{
+    flex: 1 0;
+    height: 38px;
+    width: 70%;
+    padding-left: 8px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    outline: #39574C;
+}
+.input input:active{
+    border: 2px solid var(--cor-primaria);
+}
+.input input:focus{
+    border: 2px solid var(--cor-primaria);
+}
+

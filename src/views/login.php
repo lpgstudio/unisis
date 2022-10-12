@@ -15,7 +15,7 @@
 <body>
     
     <section>
-        <?php print_r($_POST); ?>
+        <?php //print_r($_POST); ?>
         <div class="container-login">
             <div class="user signinBx">
                 <div class="imgBx"><img src="https://picsum.photos/id/336/400/500" alt=""></div>
@@ -31,16 +31,18 @@
                             placeholder="Informe seu e-mail."
                             value="<?= $email ?>" 
                             autofocus
+                            title="E-mail"
                         >
                         <input 
                             type="password" 
                             name="password" 
                             id="password" 
                             class="form-control " 
-                            placeholder="*******" 
+                            placeholder="*******"
+                            title="Senha" 
                         >
-                        <button>Login</button>
-                        <p class="signup" >ainda não tem uma conta? <a href="#" onclick="TogglerForm()">Registrar.</a></p>
+                        <button title="Fazer login">Login</button>
+                        <p class="signup" >ainda não tem uma conta? <a href="#registrar" onclick="TogglerForm()" title="Criar conta">Registrar.</a></p>
                     </form>
                 </div>
             </div>
@@ -48,11 +50,11 @@
                 <div class="formBx">
                     <form action="createAccount.php" method="post">
                         <h2>Criar uma conta</h2>
-                        <input type="text" placeholder="Nome" name="create_username">
-                        <input type="email" placeholder="Email" name="create_email">
-                        <input type="password" placeholder="Senha" name="create_password">
-                        <button>Registrar</button>
-                        <p class="signup">Já possuí uma conta? <a href="#" onclick="TogglerForm()">Fazer Login.</a></p>
+                        <input type="text" placeholder="Nome" name="create_username" title="Nome">
+                        <input type="email" placeholder="Email" name="create_email" title="Email">
+                        <input type="password" placeholder="Senha" name="create_password" title="Senha">
+                        <button title="Registrar">Registrar</button>
+                        <p class="signup">Já possuí uma conta? <a href="#login" onclick="TogglerForm()" title="Fazer login">Fazer Login.</a></p>
                     </form>
                 </div>
                 <div class="imgBx"><img src="https://picsum.photos/id/1/400/500" alt=""></div>
