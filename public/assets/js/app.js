@@ -25,3 +25,17 @@ function redirectList(){
         window.location.replace('list_buy.php')
     })
 }
+
+function toggleSideMenu(id){
+    console.log('click')
+    // var ativos = document.querySelectorAll('.activeMenu');
+    // if(ativos.length > 0){
+    //     for(i = 0; i < ativos.length; i++){
+    //     if (id !== ativos[i].id) {
+    //         ativos[i].classList.remove('activeMenu')
+    //     }
+    //     }
+    // }
+    // var selected = document.getElementById(id);
+    // selected.classList.toggle('activeMenu');
+}
