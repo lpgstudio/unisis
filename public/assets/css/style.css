@@ -254,3 +254,51 @@ nav.navigation .home-icon {
     border: 2px solid var(--cor-primaria);
 }
 
+/* Listar cliente */
+#clientes .container h2{
+    position: relative;
+    font-family: var(--font-logo);
+    font-weight: 700;
+    font-size: 26px;
+    color: var(--cor-primaria);
+    margin: 30px 0;
+}
+#clientes .container h2::after{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 70px;
+    height: 3px;
+    background-color: var(--cor-secundaria);
+}
+
+#clientes .container{
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+#clientes .container .tabela{
+    width: 100%;
+}
+#clientes .container .tabela table{
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 550px;
+    overflow-x: auto;
+}
+
+#clientes .container .tabela table th{
+    font-family: var(--font-logo);
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--cor-primaria);
+    border-bottom: 2px solid var(--cor-secundaria);
+    padding: 5px 0;
+}
+
+#clientes .container .tabela table td{
+    border-bottom: 1px solid var(--cor-secundaria);
+    padding: 10px;
+}

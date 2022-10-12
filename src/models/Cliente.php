@@ -44,5 +44,21 @@ class Cliente extends Model{
             echo "Error: ".$conn->error;
         }
     }
+
+    public static function getAll($user_id){
+        $objects = [];
+        $conn = Database::getConnection();
+        $sql = "SELECT * FROM " . self::$tableName . " WHERE user_id = ". $user_id;
+
+        $result = Database::getResultFromQuery($sql);
+        if($result->num_rows === 0){
+            return null;
+        }else{
+            while($row = $result->fetch_assoc()){
+                array_push($objects, $row);
+            }
+        }
+        return $objects;
+    }
     // ...
 }
