@@ -302,3 +302,7 @@ nav.navigation .home-icon {
     border-bottom: 1px solid var(--cor-secundaria);
     padding: 10px;
 }
+
+#clientes .container .tabela table tr:hover{
+    background-color: #ebebeb;
+}
