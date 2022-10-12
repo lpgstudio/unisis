@@ -2,7 +2,7 @@
 
 // Carregar o arquivo do model
 function loadModel($modelName){
-    require_once(MODEL_PATH . "/{modelName}.php");
+    require_once(MODEL_PATH . "/{$modelName}.php");
 }
 
 // Carregar o arquivo do views recebendo nome e parâmetros em array
