@@ -125,14 +125,16 @@ nav.navigation .home-icon {
     width: 100%;
     list-style: none;
     transition: 0.5s;
-    padding: 5px 20px;
+    padding: 15px 20px;
+    margin: 5px 0;
+
 }
 
 .navigation ul li:hover{
     background-color: var(--cor-primaria);
     color: var(--hover);
     transition: 0.5s;
-    padding: 5px 25px;
+    padding: 15px 25px;
 }
 
 .navigation ul li:nth-child(1){
@@ -149,33 +151,26 @@ nav.navigation .home-icon {
     color: var(--white);
 }
 
-.navigation ul li a .icon{
-    position: relative;
-    display: block;
-    min-width: 60px;
-    text-align: center;
-}
-
-.navigation ul li a .icon i{
-    font-size: 24px;
-}
-
-.navigation ul li a .title{
-    position: relative;
-    display: block;
-    padding: 0 10px;
-    height: 60px;
-    line-height: 60px;
-    white-space: nowrap;
-}
-
 .navigation ul li:nth-child(1) a{
     margin-top: 10px;
 }
 
-.navigation ul li:nth-child(1) a .title{
-    margin-top: 10px;
-    height: 60px;
+.navigation ul li .sidebar-menu{
+    display: none;
+}
+.navigation ul li .sidebar-menu.activeMenu{
+    display: block;
+}
+
+.navigation ul li .sidebar-menu a{
+    padding: 5px 15px ;
+    margin: 15px 0;
+    border-left: 5px solid var(--cor-primaria);
+}
+.navigation ul li .sidebar-menu a:hover{
+    padding: 5px 15px ;
+    margin: 15px 0;
+    border-left: 5px solid var(--cor-secundaria);
 }
 
 .main{
@@ -304,5 +299,88 @@ nav.navigation .home-icon {
 }
 
 #clientes .container .tabela table tr:hover{
+    background-color: #ebebeb;
+}
+
+/* Cadastro produto */
+#criar-produto .container h2{
+    position: relative;
+    font-family: var(--font-logo);
+    font-weight: 700;
+    font-size: 26px;
+    color: var(--cor-primaria);
+    margin: 30px 0;
+}
+#criar-produto .container h2::after{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 70px;
+    height: 3px;
+    background-color: var(--cor-secundaria);
+}
+
+#criar-produto .container{
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+#criar-produto .container form.formBx {
+    width: 60%;
+    text-align: center;
+}
+
+/* Listar produto */
+#produtos .container h2{
+    position: relative;
+    font-family: var(--font-logo);
+    font-weight: 700;
+    font-size: 26px;
+    color: var(--cor-primaria);
+    margin: 30px 0;
+}
+#produtos .container h2::after{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 70px;
+    height: 3px;
+    background-color: var(--cor-secundaria);
+}
+
+#produtos .container{
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+#produtos .container .tabela{
+    width: 100%;
+}
+#produtos .container .tabela table{
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 550px;
+    overflow-x: auto;
+}
+
+#produtos .container .tabela table th{
+    font-family: var(--font-logo);
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--cor-primaria);
+    border-bottom: 2px solid var(--cor-secundaria);
+    padding: 5px 0;
+}
+
+#produtos .container .tabela table td{
+    border-bottom: 1px solid var(--cor-secundaria);
+    padding: 10px;
+}
+
+#produtos .container .tabela table tr:hover{
     background-color: #ebebeb;
 }
