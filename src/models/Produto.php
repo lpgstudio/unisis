@@ -43,6 +43,7 @@ class Produto extends Model{
         }else{
             addErrorMsg('Error: '. $conn->error);
             echo "Error: ". $conn->error;
+            $_SESSION['error'] = $conn->error;
         }
     }
 

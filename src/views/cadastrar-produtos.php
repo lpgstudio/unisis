@@ -7,7 +7,8 @@
             <div class="input">
                 <label for="marca">Selecione a marca:</label>
                 <select name="marca" id="marca">
-                    <option value="" disabled selected>Selecionar</option>
+                    <option value="0" disabled selected>Selecionar</option>
+                    <option value="1" >Teste</option>
                     <!-- loop da marca -->
                 </select>
                 <a href="#">Cadastrar Marca</a>

@@ -6,6 +6,8 @@ requireValidSession();
 
 $id = $_SESSION['user']->id;
 
+$_SESSION['error'] = $erro;
+
 $dados['id'] = "";
 $dados['user_id'] = $id;
 $dados['marca_id'] = filter_var(@$_POST['marca'], FILTER_SANITIZE_NUMBER_INT, FILTER_FLAG_STRIP_LOW);
@@ -21,9 +23,10 @@ $dados['estimativa'] = filter_var(@$_POST['estimativa'], FILTER_SANITIZE_NUMBER_
 print_r($dados);
 
 try{
-    // $cadastrar = Produto::createProduct($dados);
+    $cadastrar = Produto::createProduct($dados);
+    header('Location: ../dashboard.php');
 }catch(Exception $e){
     echo $e->getMessage();
+    $erro = $e->getMessage();
 }
-loadTemplateView('dashboard' , ['produtos' => $dados]);
-// header('Location: ../dashboard.php');
+// loadTemplateView('dashboard' , ['produtos' => $dados]);
