@@ -1,4 +1,4 @@
-<section id="criar-Produto" class="main">
+<section id="criar-produto" class="main">
     <div class="container">
         <?php print_r(@$teste);?>
         <h2>Cadastrar Produto</h2>
@@ -7,18 +7,18 @@
             <div class="input">
                 <label for="marca">Selecione a marca:</label>
                 <select name="marca" id="marca">
-                    <option value="Selecionar" disabled selected>Selecionar</option>
+                    <option value="" disabled selected>Selecionar</option>
                     <!-- loop da marca -->
-                    <option value="Cadastrar"><a href="#">Cadastrar Marca</a></option>
                 </select>
+                <a href="#">Cadastrar Marca</a>
             </div>
             <div class="input">
                 <label for="categoria">Selecione a Categoria:</label>
                 <select name="categoria" id="categoria">
                     <option value="Selecionar" disabled selected>Selecionar</option>
                     <!-- loop da marca -->
-                    <option value="Cadastrar"><a href="#">Cadastrar Categoria</a></option>
                 </select>
+                <a href="#">Cadastrar Categoria</a>
             </div>
             
             <div class="input">

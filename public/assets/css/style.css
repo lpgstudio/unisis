@@ -225,6 +225,7 @@ nav.navigation .home-icon {
     margin-bottom: 15px;
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .input label {
@@ -233,8 +234,8 @@ nav.navigation .home-icon {
     margin-right: 15px;
 }
 
-.input input{
-    flex: 1 0;
+.input input, .input select{
+    flex: 1 0 200px;
     height: 38px;
     width: 70%;
     padding-left: 8px;
@@ -328,7 +329,7 @@ nav.navigation .home-icon {
 }
 
 #criar-produto .container form.formBx {
-    width: 60%;
+    width: 80%;
     text-align: center;
 }
 

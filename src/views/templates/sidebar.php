@@ -16,7 +16,7 @@
         <li>
             <p class="accordion" id="content-3" onclick="toggleSideMenu('content-3')">Produtos</p>
             <div class="sidebar-menu activeMenu">
-                <a href="produtos.php">Cadastrar</a>
+                <a href="produtos.php">Listar</a>
                 <a href="cadastrar-produto.php">Cadastrar</a>
             </div>
         </li>
