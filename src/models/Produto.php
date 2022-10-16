@@ -62,5 +62,20 @@ class Produto extends Model{
         return $objects;
     }
 
+    public static function getBaixoEstoque($user_id){
+        $objects = [];
+        $sql = "SELECT * FROM " . self::$tableName . " WHERE user_id = " .$user_id . " AND estoque <= 2";
+
+        $result = Database::getResultFromQuery($sql);
+        if($result->num_rows === 0){
+            return null;
+        }else{
+            while($row = $result->fetch_assoc()){
+                array_push($objects, $row);
+            }
+        }
+        return $objects;
+    }
+
     // ...
 }

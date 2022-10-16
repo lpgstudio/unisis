@@ -14,28 +14,20 @@ function TogglerForm(){
     section.classList.toggle('active');
 }
 
-function redirectProduct(){
-    addEventListener('click', function(){
-        window.location.replace('product.php')
-    })
-}
-
-function redirectList(){
-    addEventListener('click', function(){
-        window.location.replace('list_buy.php')
-    })
-}
-
+// Abrir submenus
 function toggleSideMenu(id){
-    console.log('click')
-    var ativos = document.querySelectorAll('.activeMenu');
-    if(ativos.length > 0){
+    var ativos = document.querySelectorAll('.accordion');
+    var ativosDiv = document.querySelectorAll('.sidebar-menu');
+    if(ativos.length > 0 ){
         for(i = 0; i < ativos.length; i++){
             if (id !== ativos[i].id) {
                 ativos[i].classList.remove('activeMenu');
+                ativosDiv[i].classList.remove('activeMenu');
+            }
+            if (id == ativos[i].id) {
+                ativosDiv[i].classList.toggle('activeMenu');
+                ativos[i].classList.toggle('activeMenu');
             }
         }
     }
-    var selected = document.getElementById(id);
-    selected.classList.toggle('activeMenu');
 }

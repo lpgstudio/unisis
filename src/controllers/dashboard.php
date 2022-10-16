@@ -3,7 +3,16 @@
 session_start();
 requireValidSession();
 
-$id = $_SESSION['user']->id;
+$user_id = $_SESSION['user']->id;
 $nome = $_SESSION['user']->username;
 
-loadTemplateView('dashboard', ['nome' => $nome]);
+$produtos = Produto::getAll($user_id);
+$estoque = Produto::getBaixoEstoque($user_id);
+$clientes = Cliente::getAll($user_id);
+
+loadTemplateView('dashboard', [
+    'nome' => $nome,
+    'produtos' => $produtos,
+    'estoque' => $estoque,
+    'clientes' => $clientes
+]);

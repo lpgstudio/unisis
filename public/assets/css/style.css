@@ -66,10 +66,35 @@ header{
     align-items: center;
 }
 
-header .logo {
+header .logo a{
+    text-decoration: none;
     color: var(--cor-secundaria);
     font-family: var(--font-logo);
     font-size: 32px;
+}
+
+header .user-menu li{
+    list-style: none;
+}
+
+header .user-menu li a{
+    text-decoration: none;
+    color: var(--cor-secundaria);
+    font-family: var(--font-logo);
+    font-weight: 400;
+    font-size: 20px;
+}
+
+header .user-menu li a i{
+    font-size: 16px;
+    margin-right: 10px;
+    transition: 0.5s ease-in-out;
+}
+
+header .user-menu li a:hover i{
+    font-size: 18px;
+    margin-right: 0px;
+    transition: 0.5s ease-in-out;
 }
 
 footer{
@@ -83,6 +108,11 @@ footer{
     justify-content: center;
     align-items: center;
     background-color: var(--cor-primaria);
+}
+
+footer p a {
+    color: var(--cor-secundaria);
+    text-decoration: none;
 }
 
 nav.navigation{
@@ -106,7 +136,7 @@ nav.navigation{
     overflow-y: auto;
 }
 
-.navigation.active{
+nav.navigation.active{
     width: 60px;
     transition: 0.5s;
 }
@@ -115,6 +145,7 @@ nav.navigation .home-icon {
     margin-right: 20px;
     color: var(--cor-primaria);
     font-size: 22px;
+    cursor: pointer;
 }
 
 .navigation ul{

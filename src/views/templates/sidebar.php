@@ -1,28 +1,39 @@
 <nav class="navigation">
-    <a href="#" class="home-icon">
+    <span class="home-icon" onclick="menuToggle()">
         <i class="fas fa-bars"></i>
-    </a>
-    <ul class="nav-menu">
+    </span>
+    <ul class="nav-menu" >
         <li>
-            <a href="#" title="Registrar venda" alt="Registrar venda">Registrar venda</a>
+            <a href="#" title="Registrar venda" alt="Registrar venda"> <i class="fas fa-cash-register"></i>
+            <i class="fas fa-cart-plus"></i> Registrar venda</a>
         </li>
-        <li>
-            <p class="accordion" id="content-2" onclick="toggleSideMenu('content-2')">Clientes</p>
-            <div class="sidebar-menu activeMenu">
-                <a href="clientes.php">Listar</a>
-                <a href="cadastrar-cliente.php">Cadastrar</a>
+        <li class="accordion" id="content-2" onclick="toggleSideMenu('content-2')">
+            <div class="info">
+                <i class="fas fa-address-book"></i>
+                <p>Clientes</p>
+            </div>
+            <div class="sidebar-menu">
+                
+                <a href="clientes.php"><i class="far fa-list-alt"></i> Listar</a>
+                <a href="cadastrar-cliente.php"> <i class="fas fa-plus"></i> Cadastrar</a>
             </div>
         </li>
-        <li>
-            <p class="accordion" id="content-3" onclick="toggleSideMenu('content-3')">Produtos</p>
-            <div class="sidebar-menu activeMenu">
+        <li class="accordion" id="content-3" onclick="toggleSideMenu('content-3')">
+            <div class="info">
+                <i class="fas fa-store"></i>
+                <p>Produtos</p>
+            </div>
+            <div class="sidebar-menu">
                 <a href="produtos.php">Listar</a>
                 <a href="cadastrar-produto.php">Cadastrar</a>
             </div>
         </li>
-        <li>
-            <p class="accordion" id="content-4" onclick="toggleSideMenu('content-4')">Fornecedor</p>
-            <div class="sidebar-menu activeMenu">
+        <li class="accordion" id="content-4" onclick="toggleSideMenu('content-4')"> 
+            <div class="info">
+                <i class="fas fa-dolly"></i>
+                <p>Fornecedor</p>
+            </div>
+            <div class="sidebar-menu">
                 <a href="marcas.php">Listar</a>
                 <a href="cadastrar-marca.php">Cadastrar</a>
             </div>
