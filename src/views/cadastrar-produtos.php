@@ -6,12 +6,14 @@
 
             <div class="input">
                 <label for="marca">Selecione a marca:</label>
-                <select name="marca" id="marca">
-                    <option value="0" disabled selected>Selecionar</option>
-                    <option value="1" >Teste</option>
+                <select name="marca" id="marca" required>
+                    <option disabled selected>Selecionar</option>
+                    <?php foreach($marcas as $marca) :?>
+                    <option value="<?php echo $marca['id'];?>" ><?php echo $marca['nome'];?></option>
+                    <?php endforeach;?>
                     <!-- loop da marca -->
                 </select>
-                <a href="#">Cadastrar Marca</a>
+                <a href="cadastrar-marca.php">Cadastrar Marca</a>
             </div>
             <div class="input">
                 <label for="categoria">Selecione a Categoria:</label>

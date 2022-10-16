@@ -22,6 +22,10 @@
         </li>
         <li>
             <p class="accordion" id="content-4" onclick="toggleSideMenu('content-4')">Fornecedor</p>
+            <div class="sidebar-menu activeMenu">
+                <a href="marcas.php">Listar</a>
+                <a href="cadastrar-marca.php">Cadastrar</a>
+            </div>
         </li>
     </ul>
 </nav>
