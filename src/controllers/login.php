@@ -5,14 +5,18 @@ session_start();
 $exception = null;
 
 if(count($_POST) > 0){
-    $login = new Login($_POST);
-    try{
-        $user = $login->checkLogin();
-        $_SESSION['user'] = $user;
-        header("Location: dashboard.php");
-    } catch(AppException $e){
-        $exception = $e;
+    $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+    if(!filter_var($_POST['email'], FILTER_SANITIZE_EMAIL) === false && $email != "" && $email != " "){
+        $dados = array('email' => $email, 'password' => $_POST['password']);
+        $login = new Login($dados);
+        try{
+            $user = $login->checkLogin();
+            $_SESSION['user'] = $user;
+            header("Location: dashboard.php");
+        } catch(AppException $e){
+            $exception = $e;
+        }
     }
 }
 
-loadView('login', $_POST + ['exception' => $exception]);
+loadView('login', ['exception' => $exception]);
