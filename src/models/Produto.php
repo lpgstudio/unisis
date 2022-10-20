@@ -1,4 +1,3 @@
-<!-- Model -->
 <?php
 
 class Produto extends Model{
@@ -10,6 +9,7 @@ class Produto extends Model{
         "nome",
         "ean",
         "estoque",
+        "estoque_min",
         "valor_custo",
         "valor_venda",
         "data_compra",
@@ -19,7 +19,7 @@ class Produto extends Model{
 
     public static function createProduct($dados = []){
         $conn = Database::getConnection();
-        $sql = "INSERT INTO " . self::$tableName ." (". implode(",", self::$columns). ") VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+        $sql = "INSERT INTO " . self::$tableName ." (". implode(",", self::$columns). ") VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
 
         $stmt = $conn->prepare($sql);
         $params = [
@@ -29,6 +29,7 @@ class Produto extends Model{
             $dados['nome'],
             $dados['ean'],
             $dados['estoque'],
+            $dados['estoque_min'],
             $dados['valor_custo'],
             $dados['valor_venda'],
             $dados['data_compra'],
@@ -36,7 +37,7 @@ class Produto extends Model{
             $dados['estimativa'],
         ];
 
-        $stmt->bind_param("iiississssi", ...$params);
+        $stmt->bind_param("iiissiissssi", ...$params);
         if($stmt->execute()){
             addSuccessMsg("Produto cadastrado com sucesso!");
             unset($dados);
@@ -64,7 +65,7 @@ class Produto extends Model{
 
     public static function getBaixoEstoque($user_id){
         $objects = [];
-        $sql = "SELECT * FROM " . self::$tableName . " WHERE user_id = " .$user_id . " AND estoque <= 2";
+        $sql = "SELECT * FROM " . self::$tableName . " WHERE user_id = " .$user_id . " AND estoque <= estoque_min";
 
         $result = Database::getResultFromQuery($sql);
         if($result->num_rows === 0){
