@@ -11,6 +11,7 @@
                     <th scope="col">Nome</th>
                     <th scope="col">Qnt</th>
                     <th scope="col">Valor</th>
+                    <th scope="col">Validade</th>
                     <th scope="col">Opções</th>
                 </thead>
                 <tbody>
@@ -20,11 +21,14 @@
                         foreach ($marca as $mrk):
                     ?>
                     <tr scope="row">
-                        <td data-title="codigo"><?php echo $produto['id']?></td>
-                        <td data-title="marca"><?php echo $mrk['nome'] ; ?></td>
-                        <td data-title="nome do produto"><?php echo $produto['nome']?></td>
-                        <td data-title="Quantidade em estoque"><?php echo $produto['estoque']?></td>
-                        <td data-title="Valor de venda"><?php echo $produto['valor_venda']?></td>
+                        <td data-title="codigo"><?php echo  htmlentities($produto['id'],ENT_QUOTES);?></td>
+                        <td data-title="marca"><?php echo htmlentities($mrk['nome'],ENT_QUOTES); ?></td>
+                        <td data-title="nome do produto"><?php echo htmlentities($produto['nome'],ENT_QUOTES);?></td>
+                        <td data-title="Quantidade em estoque"><?php echo htmlentities($produto['estoque'],ENT_QUOTES);?></td>
+                        <td data-title="Valor de venda"><?php echo "R$ ". htmlentities($produto['valor_venda'],ENT_QUOTES);?></td>
+                        <td data-title="Validade"><?php
+                            $dateValidade = date_create($produto['validade']) ; 
+                         echo htmlentities(date_format($dateValidade,'d/m/Y'),ENT_QUOTES);?></td>
                         <td data-title="opcoes">
                             <a href="#" title="Vender"><i class="fas fa-shopping-cart"></i></a>
                             <a href="#" title="Editar"><i class="fas fa-edit"></i></a>

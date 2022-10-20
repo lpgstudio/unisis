@@ -159,7 +159,6 @@ nav.navigation .home-icon {
     transition: 0.5s;
     padding: 15px 20px;
     margin: 5px 0;
-
 }
 
 .navigation ul li:hover{
@@ -167,6 +166,10 @@ nav.navigation .home-icon {
     color: var(--hover);
     transition: 0.5s;
     padding: 15px 25px;
+}
+
+.navigation ul li p{
+    cursor: pointer;
 }
 
 .navigation ul li:nth-child(1){

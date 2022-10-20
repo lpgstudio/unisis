@@ -1,4 +1,4 @@
-<?php echo $_SESSION['error'] ;?>
+<?php echo @$_SESSION['error'] ;?>
 
 <section id="dashboard" class="main">
     <h2>Olá <?php print_r($nome); ?>,</h2>
