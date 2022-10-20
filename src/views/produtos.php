@@ -25,7 +25,11 @@
                         <td data-title="nome do produto"><?php echo $produto['nome']?></td>
                         <td data-title="Quantidade em estoque"><?php echo $produto['estoque']?></td>
                         <td data-title="Valor de venda"><?php echo $produto['valor_venda']?></td>
-                        <td data-title="opcoes">Opções</td>
+                        <td data-title="opcoes">
+                            <a href="#" title="Vender"><i class="fas fa-shopping-cart"></i></a>
+                            <a href="#" title="Editar"><i class="fas fa-edit"></i></a>
+                            <a href="#" title="Deletar"><i class="fas fa-trash"></i></a>
+                        </td>
                     </tr>
                     <?php endforeach;
                     endforeach;?>

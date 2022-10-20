@@ -5,7 +5,7 @@
     <ul class="nav-menu" >
         <li>
             <a href="#" title="Registrar venda" alt="Registrar venda"> <i class="fas fa-cash-register"></i>
-            <i class="fas fa-cart-plus"></i> Registrar venda</a>
+            Registrar venda</a>
         </li>
         <li class="accordion" id="content-2" onclick="toggleSideMenu('content-2')">
             <div class="info">

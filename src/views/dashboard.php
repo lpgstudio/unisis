@@ -11,14 +11,14 @@
             <p><?php echo count($produtos); ?></p>
         </div>
         <div class="card">
-            Produtos Top 5
+            <h3>Produtos Top 5</h3>
         </div>
         <div class="card">
             <h3>Produtos baixo estoque</h3>
             <p><?php echo count($estoque); ?></p>
         </div>
         <div class="card">
-            Produtos Vencendo
+            <h3>Produtos Vencendo</h3>
         </div>
     </div>
 
@@ -28,10 +28,10 @@
             <p><?php echo count($clientes); ?></p>
         </div>
         <div class="card">
-            Top 5
+            <h3>Top 5</h3>
         </div>
         <div class="card">
-            Aniversários proximo
+            <h3>Aniversários proximo</h3>
         </div>
     </div>
 </section>

@@ -185,6 +185,19 @@ nav.navigation .home-icon {
 
 .navigation ul li:nth-child(1) a{
     margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.navigation ul li .info {
+    display: flex;
+    align-items: center;
+}
+
+.navigation ul li .info i,
+.navigation ul li:nth-child(1) a i{
+    font-size: 26px;
+    margin-right: 20px;
 }
 
 .navigation ul li .sidebar-menu{
@@ -198,6 +211,10 @@ nav.navigation .home-icon {
     padding: 5px 15px ;
     margin: 15px 0;
     border-left: 5px solid var(--cor-primaria);
+}
+.navigation ul li .sidebar-menu a i{
+    font-size: 26px;
+    margin-right: 20px;
 }
 .navigation ul li .sidebar-menu a:hover{
     padding: 5px 15px ;
@@ -413,6 +430,37 @@ nav.navigation .home-icon {
     border-bottom: 1px solid var(--cor-secundaria);
     padding: 10px;
 }
+#produtos .container .tabela table td:nth-child(1){
+    max-width: 35px;
+}
+#produtos .container .tabela table td:nth-child(3),
+#produtos .container .tabela table th:nth-child(3){
+    max-width: 485px;
+    min-width: 250px;
+}
+#produtos .container .tabela table td:nth-child(6),
+#produtos .container .tabela table th:nth-child(6){
+    max-width: 140px;
+    min-width: 140px;
+    padding: 10px 0;
+    text-align: center;
+}
+
+#produtos .container .tabela table td a{
+    padding: 5px 10px;
+    border-radius: 7px;
+    margin: 0 3px;
+    color: white;
+}
+#produtos .container .tabela table td a:nth-child(1){
+    background-color: #0cbd0c;
+}
+#produtos .container .tabela table td a:nth-child(2){
+    background-color: #0c26bd;
+}
+#produtos .container .tabela table td a:nth-child(3){
+    background-color: #bd0c0c;
+}
 
 #produtos .container .tabela table tr:hover{
     background-color: #ebebeb;
@@ -500,4 +548,60 @@ nav.navigation .home-icon {
 
 #marcas .container .tabela table tr:hover{
     background-color: #ebebeb;
+}
+
+/* Dashboard */
+.dash-cards-produtos,.dash-cards-clientes{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.dash-cards-produtos .card, .dash-cards-clientes .card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    border: 2px solid #ccc;
+    box-shadow: 0 0 9px 0px #33333380;
+    border-radius: 20px;
+    text-align: center;
+}
+
+#dashboard .card h3{
+    font-family: var(--font-logo);
+    font-weight: 700;
+    font-size:20px;
+    color: var(--cor-primaria);
+    margin-bottom: 20px;
+}
+
+#dashboard .card p{
+    font-weight: 700;
+    font-size:20px;
+    color: var(--cor-primaria);
+    background-color: var(--cor-secundaria);
+    padding: 30px 40px;
+    border-radius: 50%;
+}
+
+@media screen and (max-width: 768px){
+    nav.navigation {
+        width: 60px;
+    }
+    .main {
+        width: calc(100% - 60px);
+        left: 60px;
+    }
+
+    .main.active {
+        width: calc(100% - 250px);
+        left: 250px;
+    }
+    nav.navigation.active {
+        width: 250px;
+    }
 }
