@@ -1,4 +1,3 @@
-<!-- Model -->
 <?php
 
 class Marca extends Model{

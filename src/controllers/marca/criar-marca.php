@@ -1,4 +1,3 @@
-<!-- controllers cadastro -->
 <?php
 
 session_start();

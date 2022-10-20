@@ -1,4 +1,3 @@
-<!-- controllers cadastro -->
 <?php
 
 session_start();
@@ -14,6 +13,7 @@ $dados['marca_id'] = filter_var(@$_POST['marca'], FILTER_SANITIZE_NUMBER_INT, FI
 $dados['nome'] = filter_var(@$_POST['nome'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
 $dados['ean'] = filter_var(@$_POST['codigo-de-barras'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
 $dados['estoque'] = filter_var(@$_POST['estoque'], FILTER_SANITIZE_NUMBER_INT, FILTER_FLAG_STRIP_LOW);
+$dados['estoque_min'] = filter_var(@$_POST['estoque_min'], FILTER_SANITIZE_NUMBER_INT, FILTER_FLAG_STRIP_LOW);
 $dados['valor_custo'] = filter_var(@$_POST['valor-custo'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
 $dados['valor_venda'] = filter_var(@$_POST['valor-venda'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
 $dados['data_compra'] = filter_var(@$_POST['data-compra'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);

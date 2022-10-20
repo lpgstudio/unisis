@@ -40,6 +40,11 @@
             </div>
 
             <div class="input">
+                <label for="estoque_min">Qnt mínima em Estoque:</label>
+                <input type="number" name="estoque_min" id="estoque_min" class="form-control" placeholder="0" value="<?= @$_POST['estoque_min'] ?>" title="Quantidade mínima em estoque" min="0" autofocus >
+            </div>
+
+            <div class="input">
                 <label for="valor-custo">Valor de Custo:</label>
                 <input type="text" name="valor-custo" id="valor-custo" class="form-control" placeholder="10,00" value="<?= @$_POST['valor-custo'] ?>" title="Valor de custo do produto" autofocus >
             </div>
