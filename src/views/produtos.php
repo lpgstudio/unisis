@@ -17,6 +17,7 @@
                 <tbody>
                     <?php 
                     foreach ($produtos as $produto):
+                        // em produção é $user só
                         $marca = Marca::oneMarca($user->id, $produto['marca_id']);
                         foreach ($marca as $mrk):
                     ?>
@@ -31,7 +32,7 @@
                          echo htmlentities(date_format($dateValidade,'d/m/Y'),ENT_QUOTES);?></td>
                         <td data-title="opcoes">
                             <a href="#" title="Vender"><i class="fas fa-shopping-cart"></i></a>
-                            <a href="#" title="Editar"><i class="fas fa-edit"></i></a>
+                            <a href="editar-produto.php?codigo=<?php echo htmlentities($produto['id'],ENT_QUOTES);?>" title="Editar"><i class="fas fa-edit"></i></a>
                             <a href="#" title="Deletar"><i class="fas fa-trash"></i></a>
                         </td>
                     </tr>

@@ -63,6 +63,22 @@ class Produto extends Model{
         return $objects;
     }
 
+    public static function getOneProduct($user_id, $product_id){
+        $objects = [];
+        $sql = "SELECT * FROM " . self::$tableName . " WHERE id = " .$product_id . " AND user_id = " .$user_id;
+
+        $result = Database::getResultFromQuery($sql);
+        if($result->num_rows === 0){
+            return null;
+        }else{
+            while($row = $result->fetch_assoc()){
+                array_push($objects, $row);
+            }
+        }
+        return $objects;
+
+    }
+
     public static function getBaixoEstoque($user_id){
         $objects = [];
         $sql = "SELECT * FROM " . self::$tableName . " WHERE user_id = " .$user_id . " AND estoque <= estoque_min";
