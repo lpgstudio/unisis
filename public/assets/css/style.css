@@ -571,6 +571,34 @@ nav.navigation .home-icon {
     background-color: #ebebeb;
 }
 
+/* menu da tabela */
+td.tabela-menu{
+    position: relative;
+    text-align:center;
+    cursor: pointer;
+}
+td.tabela-menu div{display: none;}
+td.tabela-menu div.activeP{
+    position: absolute;
+    top: 90%;
+    left: -135px;
+    z-index: 2;
+    width: 180px;
+    height: 60px;
+    padding: 0 10px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+
+    background-color: white;
+    border: 1px solid var(--cor-secundaria);
+    border-radius: 7px;
+    box-shadow: 1px 1px 10px 2px #0006;
+}
+
+
 /* Dashboard */
 .dash-cards-produtos,.dash-cards-clientes{
     position: relative;

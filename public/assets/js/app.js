@@ -31,3 +31,24 @@ function toggleSideMenu(id){
         }
     }
 }
+
+//Modal produtos
+function toggleModalProduct(id){
+    var ativos = document.querySelectorAll('.activeP')
+    var modal = document.getElementById(`${id}`);
+    console.log('Click : ' + id)
+
+    modal.classList.toggle('activeP');
+    
+    if(ativos.length >= 0 ){
+        for(i = 0; i < ativos.length; i++){
+            if (id !== ativos[i].id) {
+                ativos[i].classList.remove('activeP');
+                modal[i].classList.remove('activeP');
+            }
+            // if (id == ativos[i].id) {
+            //     modal.classList.toggle('activeP');
+            // }
+        }
+    }
+}
