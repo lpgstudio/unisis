@@ -1,4 +1,6 @@
 <?php
+loadModel('Login');
+session_start();
 
 if(isset($_POST)){
 
@@ -12,8 +14,10 @@ if(isset($_POST)){
     }
 
     if($username_valid !== "" && $username_valid !== " " && $email_valid !== "" && $username_valid !== " "){
-        $login = new Login($email_valid);
+        $sendEmail = array('email' =>$email_valid);
+        $login = new Login($sendEmail);
         $haveEmail = $login->checkRegistro();
+        
         if(!$haveEmail){
             $dados['id'] = '';
             $dados['username'] = $username_valid;
@@ -30,8 +34,12 @@ if(isset($_POST)){
             }
             
             header('Location: login.php');
-        }else{addErrorMsg('Usuário já cadastrado');}
+        }else{
+            addErrorMsg('Usuário já cadastrado');
+            header('Location: login.php');
+        }
     }else{  
         addErrorMsg('Dados inválidos');
+        header('Location: login.php');
     }
 }

@@ -55,6 +55,24 @@ button:hover{
     transition: 0.5s;
 }
 
+/* erros */
+.alert {
+    background: #e5e5e5;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.alert.alert-success{
+    background: #8fdd6f;
+    border: 1px solid #62974d;
+}
+
+.alert.alert-danger{
+    background: #dd6f6f;
+    border: 1px solid #974d4d;
+}
+
+
 header{
     position: relative;
     width: 100%;

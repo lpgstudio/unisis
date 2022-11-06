@@ -1,6 +1,7 @@
 <?php echo @$_SESSION['error'] ;?>
 
 <section id="dashboard" class="main">
+    <?php include(TEMPLATE_PATH . '/messages.php') ?>
     <h2>Olá <?php print_r($nome); ?>,</h2>
     <p>Esse é o seu dashboard.</p>
     <hr>
