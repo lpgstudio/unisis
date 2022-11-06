@@ -30,4 +30,14 @@ class Login extends Model{
         }
         throw new AppException('Usuário ou senha inválido.');
     }
+
+    // Validação de Login
+    public function checkRegistro(){
+        $this->validate();
+        $user = User::getOne(['email' => $this->email]);
+        if(!$user){
+            return false;
+        }
+        throw new AppException('Usuário já cadastrado.');
+    }
 }

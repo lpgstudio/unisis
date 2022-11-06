@@ -12,21 +12,25 @@ if(isset($_POST)){
     }
 
     if($username_valid !== "" && $username_valid !== " " && $email_valid !== "" && $username_valid !== " "){
-        $dados['id'] = '';
-        $dados['username'] = $username_valid;
-        $dados['email'] = $email_valid;
-        $dados['password'] = password_hash($_POST['create_password'], PASSWORD_DEFAULT);
-        $dados['permissao'] = 1;
-        $dados['create_time'] = date('Y-m-d H:i:s');
-        
-        try{
-            $cadastrar = User::createAccount($dados);
-            addSuccessMsg('Usuário criado com sucesso!');
-        }catch(Exception $e){
-            echo $e->getMessage();
-        }
-        
-        header('Location: login.php');
+        $login = new Login($email_valid);
+        $haveEmail = $login->checkRegistro();
+        if(!$haveEmail){
+            $dados['id'] = '';
+            $dados['username'] = $username_valid;
+            $dados['email'] = $email_valid;
+            $dados['password'] = password_hash($_POST['create_password'], PASSWORD_DEFAULT);
+            $dados['permissao'] = 1;
+            $dados['create_time'] = date('Y-m-d H:i:s');
+            
+            try{
+                $cadastrar = User::createAccount($dados);
+                addSuccessMsg('Usuário criado com sucesso!');
+            }catch(Exception $e){
+                echo $e->getMessage();
+            }
+            
+            header('Location: login.php');
+        }else{addErrorMsg('Usuário já cadastrado');}
     }else{  
         addErrorMsg('Dados inválidos');
     }

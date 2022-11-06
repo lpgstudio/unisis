@@ -14,7 +14,7 @@ if(count($_POST) > 0){
             $_SESSION['user'] = $user;
             header("Location: dashboard.php");
         } catch(AppException $e){
-            $exception = $e;
+            $exception = $e; 
         }
     }
 }
