@@ -31,7 +31,7 @@
                                     <i class="fas fa-shopping-cart"></i>
                                 </a>
 
-                                <button title="Visualizar" style="background-color: var(--info);" onclick="modalInfoOpen('info-modal-<?php echo htmlentities($cliente['id'],ENT_QUOTES);?>')">
+                                <button title="Visualizar" style="background-color: var(--info);" onclick="modalInfoOpen('info-client-<?php echo htmlentities($cliente['id'],ENT_QUOTES);?>')">
                                     <i class="far fa-eye"></i>
                                 </button>
 
@@ -64,9 +64,7 @@
                             <p><b>Complemento:</b> <?php echo  htmlentities($cliente['complemento'],ENT_QUOTES);?></p>
                             <p><b>Bairro:</b> <?php echo  htmlentities($cliente['bairro'],ENT_QUOTES);?></p>
                             <p><b>Cidade:</b> <?php echo  htmlentities($cliente['cidade'],ENT_QUOTES);?></p>
-                            <p><b>Aniversário:</b> <?php
-                            $dateAniversario = date_create($produto['birthday']) ; 
-                            echo htmlentities(date_format($dateAniversario,'d/m/Y'),ENT_QUOTES);?></p>
+                            <p><b>Aniversário:</b> <?php echo htmlentities($cliente['birthday'],ENT_QUOTES);?></p>
                         </div>
                     </dialog>
 

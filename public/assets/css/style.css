@@ -472,14 +472,16 @@ nav.navigation .home-icon {
     text-align: center;
 }
 
-#produtos .container .tabela table td a{
+#produtos .container .tabela table td a,
+#clientes .container .tabela table td a{
     padding: 5px 10px;
     border-radius: 7px;
     margin: 0 3px;
     color: white;
     transition: 0.5s ease-in-out;
 }
-#produtos .container .tabela table td a:hover{
+#produtos .container .tabela table td a:hover,
+#clientes .container .tabela table td a:hover{
     transform: scale(1.1);
     transition: 0.5s ease-in-out;
 }
