@@ -78,13 +78,20 @@
                             <p><b>Aleta de estoque baixo:</b> <?php echo  htmlentities($produto['estoque_min'],ENT_QUOTES);?></p>
                             <p><b>Valor de custo:</b> R$ <?php echo  htmlentities($produto['valor_custo'],ENT_QUOTES);?></p>
                             <p><b>Valor de venda:</b> R$ <?php echo  htmlentities($produto['valor_venda'],ENT_QUOTES);?></p>
-                            <p><b>Lucro estimado:</b> R$ <?php $lucro = floatval($produto['valor_venda']) - floatval($produto['valor_custo']); echo number_format(htmlentities($lucro,ENT_QUOTES), 2, ',', '.'); ?></p>
+                            <p><b>Lucro estimado:</b> R$ <?php
+                                 $lucro = floatval($produto['valor_venda']) - floatval($produto['valor_custo']); 
+                                 $porcento = ($lucro /floatval($produto['valor_venda']))*100 ; 
+                                 echo number_format(htmlentities($lucro,ENT_QUOTES), 2, ',', '.') 
+                                    . " (" .number_format($porcento , 2, ',', '.')."%)"; ?>
+                            </p>
                             <p><b>Data da compra:</b> <?php
                             $dateValidade = date_create($produto['data_compra']) ; 
-                            echo htmlentities(date_format($dateValidade,'d/m/Y'),ENT_QUOTES);?></p>
+                            echo htmlentities(date_format($dateValidade,'d/m/Y'),ENT_QUOTES) ;?>
+                            </p>
                             <p><b>Validade:</b> <?php
                             $dateValidade = date_create($produto['validade']) ; 
-                            echo htmlentities(date_format($dateValidade,'d/m/Y'),ENT_QUOTES);?></p>
+                            echo htmlentities(date_format($dateValidade,'d/m/Y'),ENT_QUOTES);?>
+                            </p>
                             <p><b>Tempo estimado de uso:</b> <?php echo  htmlentities($produto['estimativa'],ENT_QUOTES);?> Meses</p>
                         </div>
                     </dialog>
