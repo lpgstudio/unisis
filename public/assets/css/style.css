@@ -7,6 +7,11 @@
     --cor-secundaria: #79E3BD;
     --hover: #56BB97;
 
+    --seller: #0cbd0c;
+    --edit: #0c26bd;
+    --delete: #bd0c0c;
+    --info: #bd6a0c;
+
     /* font */
     --font-logo: 'Philosopher', sans-serif;
 }
@@ -472,15 +477,20 @@ nav.navigation .home-icon {
     border-radius: 7px;
     margin: 0 3px;
     color: white;
+    transition: 0.5s ease-in-out;
 }
-#produtos .container .tabela table td a:nth-child(1){
-    background-color: #0cbd0c;
+#produtos .container .tabela table td a:hover{
+    transform: scale(1.1);
+    transition: 0.5s ease-in-out;
 }
-#produtos .container .tabela table td a:nth-child(2){
-    background-color: #0c26bd;
-}
-#produtos .container .tabela table td a:nth-child(3){
-    background-color: #bd0c0c;
+
+.container .tabela table td button{
+    padding: 8px 10px;
+    margin: 0 3px;
+    border: none;
+    border-radius: 7px;
+    color: white;
+    cursor: pointer;
 }
 
 #produtos .container .tabela table tr:hover{
@@ -581,9 +591,9 @@ td.tabela-menu div{display: none;}
 td.tabela-menu div.activeP{
     position: absolute;
     top: 90%;
-    left: -135px;
+    right: 30%;
     z-index: 2;
-    width: 180px;
+    width: auto;
     height: 60px;
     padding: 0 10px;
 
@@ -596,6 +606,29 @@ td.tabela-menu div.activeP{
     border: 1px solid var(--cor-secundaria);
     border-radius: 7px;
     box-shadow: 1px 1px 10px 2px #0006;
+}
+
+/* modal info */
+dialog {
+    position: relative;
+    margin: auto;
+    padding: 40px 30px;
+    border-radius: 15px;
+    border: 2px solid var(--cor-primaria);
+}
+
+dialog span{
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 22px;
+    color: var(--cor-primaria);
+}
+
+dialog p{
+    border-bottom: 1px solid var(--cor-secundaria);
+    padding: 5px 0;
 }
 
 

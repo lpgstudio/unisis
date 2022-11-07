@@ -30,6 +30,7 @@ recibo <i class="fas fa-receipt"></i>
 imprimir <i class="fas fa-print"></i>
 porcentagem <i class="fas fa-percent"></i>
 whats <i class="fab fa-whatsapp"></i>
+close <i class="far fa-times-circle"></i>
 
 
 -->

@@ -46,9 +46,17 @@ function toggleModalProduct(id){
                 ativos[i].classList.remove('activeP');
                 modal[i].classList.remove('activeP');
             }
-            // if (id == ativos[i].id) {
-            //     modal.classList.toggle('activeP');
-            // }
         }
     }
+}
+
+// Modal info open
+function modalInfoOpen(id){
+    var modal = document.getElementById(`${id}`);
+    modal.showModal();
+}
+// Modal info close
+function modalInfoClose(id){
+    var modal = document.getElementById(`${id}`);
+    modal.close();
 }

@@ -52,18 +52,42 @@
                         <td data-title="opcoes" class="tabela-menu" onclick="toggleModalProduct('modal-<?= htmlentities($produto['id'],ENT_QUOTES); ?>')">
                             <span><i class="fas fa-ellipsis-h"></i></span>
                             <div id="modal-<?= htmlentities($produto['id'],ENT_QUOTES); ?>">
-                                <a href="#" title="Vender">
+                                <a href="#" title="Vender" style="background-color: var(--seller);">
                                     <i class="fas fa-shopping-cart"></i>
                                 </a>
-                                <a href="editar-produto.php?codigo=<?php echo htmlentities($produto['id'],ENT_QUOTES);?>" title="Editar">
+                                <button title="Visualizar" style="background-color: var(--info);" onclick="modalInfoOpen('info-modal-<?php echo htmlentities($produto['id'],ENT_QUOTES);?>')">
+                                    <i class="far fa-eye"></i>
+                                </button>
+                                <a href="editar-produto.php?codigo=<?php echo htmlentities($produto['id'],ENT_QUOTES);?>" title="Editar" style="background-color: var(--edit);">
                                     <i class="fas fa-edit"></i>
                                 </a>
-                                <a href="#" title="Deletar">
+                                <a href="#" title="Deletar" style="background-color: var(--delete);">
                                     <i class="fas fa-trash"></i>
                                 </a>
                             </div>
                         </td>
                     </tr>
+
+                    <dialog id="info-modal-<?php echo htmlentities($produto['id'],ENT_QUOTES);?>">
+                        <span onclick="modalInfoClose('info-modal-<?php echo htmlentities($produto['id'],ENT_QUOTES);?>'); "><i class="far fa-times-circle"></i></span>
+                        <div class="modal-info-container">
+                            <p><b>Nome:</b> <?php echo  htmlentities($produto['nome'],ENT_QUOTES);?></p>
+                            <p><b>Marca:</b> <?php echo htmlentities($mrk['nome'],ENT_QUOTES); ?></p>
+                            <p><b>Código de barras:</b> <?php echo  htmlentities($produto['ean'],ENT_QUOTES);?></p>
+                            <p><b>Quantidade em estoque:</b> <?php echo  htmlentities($produto['estoque'],ENT_QUOTES);?></p>
+                            <p><b>Aleta de estoque baixo:</b> <?php echo  htmlentities($produto['estoque_min'],ENT_QUOTES);?></p>
+                            <p><b>Valor de custo:</b> R$ <?php echo  htmlentities($produto['valor_custo'],ENT_QUOTES);?></p>
+                            <p><b>Valor de venda:</b> R$ <?php echo  htmlentities($produto['valor_venda'],ENT_QUOTES);?></p>
+                            <p><b>Lucro estimado:</b> R$ <?php $lucro = floatval($produto['valor_venda']) - floatval($produto['valor_custo']); echo number_format(htmlentities($lucro,ENT_QUOTES), 2, ',', '.'); ?></p>
+                            <p><b>Data da compra:</b> <?php
+                            $dateValidade = date_create($produto['data_compra']) ; 
+                            echo htmlentities(date_format($dateValidade,'d/m/Y'),ENT_QUOTES);?></p>
+                            <p><b>Validade:</b> <?php
+                            $dateValidade = date_create($produto['validade']) ; 
+                            echo htmlentities(date_format($dateValidade,'d/m/Y'),ENT_QUOTES);?></p>
+                            <p><b>Tempo estimado de uso:</b> <?php echo  htmlentities($produto['estimativa'],ENT_QUOTES);?> Meses</p>
+                        </div>
+                    </dialog>
                     <?php endforeach;
                     endforeach;?>
                 </tbody>
