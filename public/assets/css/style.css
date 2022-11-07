@@ -8,9 +8,12 @@
     --hover: #56BB97;
 
     --seller: #0cbd0c;
+    --whats: #0ba30b;
     --edit: #0c26bd;
     --delete: #bd0c0c;
     --info: #bd6a0c;
+    --history: #39574C;
+    --rotes: #79E3BD;
 
     /* font */
     --font-logo: 'Philosopher', sans-serif;
@@ -473,7 +476,7 @@ nav.navigation .home-icon {
 }
 
 #produtos .container .tabela table td a,
-#clientes .container .tabela table td a{
+#clientes .container .tabela table td a, .btn-options{
     padding: 5px 10px;
     border-radius: 7px;
     margin: 0 3px;
@@ -481,7 +484,7 @@ nav.navigation .home-icon {
     transition: 0.5s ease-in-out;
 }
 #produtos .container .tabela table td a:hover,
-#clientes .container .tabela table td a:hover{
+#clientes .container .tabela table td a:hover, .btn-options:hover{
     transform: scale(1.1);
     transition: 0.5s ease-in-out;
 }

@@ -8,4 +8,7 @@ $user_id = $_SESSION['user']->id;
 $listaClientes = Cliente::getAll($user_id);
 
 
-loadTemplateView('clientes', ['clientes' => $listaClientes]);
+loadTemplateView('clientes', [
+    'clientes' => $listaClientes,
+    'users' => $user_id
+]);

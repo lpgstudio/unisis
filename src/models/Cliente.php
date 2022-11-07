@@ -60,5 +60,18 @@ class Cliente extends Model{
         }
         return $objects;
     }
+
+    public static function getRote($user_id, $client_end = []){
+        if($user_id == $_SESSION['user']->id){
+
+            $endTratado = str_replace(' ', '+', $client_end['endereco']);
+            $endTratado .= ",+".$client_end['numero'];
+            $endTratado .= "+" .str_replace(' ', '+', $client_end['bairro']);
+            $endTratado .= "+-+".str_replace(' ', '+', $client_end['cidade']);
+
+            return "https://www.google.com.br/maps/place/".$endTratado;
+        }
+        return "Erro ao processar os dados.";
+    }
     // ...
 }
