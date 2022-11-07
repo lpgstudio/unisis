@@ -85,11 +85,10 @@
                                     . " (" .number_format($porcento , 2, ',', '.')."%)"; ?>
                             </p>
                             <p><b>Data da compra:</b> <?php
-                            $dateValidade = date_create($produto['data_compra']) ; 
-                            echo htmlentities(date_format($dateValidade,'d/m/Y'),ENT_QUOTES) ;?>
+                            $dateCompra = date_create($produto['data_compra']) ; 
+                            echo htmlentities(date_format($dateCompra,'d/m/Y'),ENT_QUOTES) ;?>
                             </p>
                             <p><b>Validade:</b> <?php
-                            $dateValidade = date_create($produto['validade']) ; 
                             echo htmlentities(date_format($dateValidade,'d/m/Y'),ENT_QUOTES);?>
                             </p>
                             <p><b>Tempo estimado de uso:</b> <?php echo  htmlentities($produto['estimativa'],ENT_QUOTES);?> Meses</p>
