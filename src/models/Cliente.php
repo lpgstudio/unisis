@@ -45,6 +45,43 @@ class Cliente extends Model{
         }
     }
 
+    public static function upDateProduct($user_id, $prod_id, $dados = []){
+        $conn = Database::getConnection();
+        $sql = "UPDATE " . self::$tableName . " SET marca_id = ?, nome = ?, ean = ?, estoque = ?, estoque_min = ?, valor_custo = ?, valor_venda = ?, data_compra = ?, validade = ?, estimativa = ? WHERE user_id = ? AND id = ?";
+
+        $stmt = $conn->prepare($sql);
+        $params = [
+            $dados['marca'],
+            $dados['nome'],
+            $dados['ean'],
+            $dados['estoque'],
+            $dados['estoque_min'],
+            $dados['valor_custo'],
+            $dados['valor_venda'],
+            $dados['data_compra'],
+            $dados['validade'],
+            $dados['estimativa'],
+            $user_id,
+            $prod_id
+        ];
+
+        $stmt->bind_param("isiiissssiii", ...$params);
+        if($stmt->execute()){
+            addSuccessMsg("Cliente atualizado com sucesso!");
+            unset($dados);
+        }else{
+            addErrorMsg('Error: '. $conn->error);
+        }
+
+    }
+
+    public static function deleteClient($user_id, $prod_id){
+        $sql = "DELETE FROM " 
+            . static::$tableName . " WHERE user_id = " . $user_id ." AND id = " . $prod_id;
+        Database::executeSQL($sql);
+        addSuccessMsg('Cliente deletado com sucesso.');
+    }
+
     public static function getAll($user_id){
         $objects = [];
         $conn = Database::getConnection();

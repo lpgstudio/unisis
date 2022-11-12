@@ -55,7 +55,7 @@
                                     <i class="fas fa-edit"></i>
                                 </a>
 
-                                <a href="#" title="Deletar" style="background-color: var(--delete);">
+                                <a href="cliente/deletar-cliente.php?codigo=<?php echo htmlentities($cliente['id'],ENT_QUOTES);?>" title="Deletar" style="background-color: var(--delete);">
                                     <i class="fas fa-trash"></i>
                                 </a>
                             </div>
