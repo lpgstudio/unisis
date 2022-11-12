@@ -12,7 +12,7 @@
                 <label for="marca">Selecione a marca:</label>
                 <select name="marca" id="marca" value="<?php echo htmlentities($product['marca_id'], ENT_QUOTES); ?>"required>
                     <option disabled >Selecionar</option>
-                    <option value="<?php echo htmlentities($product['marca_id'], ENT_QUOTES); ?>" disabled selected><?php echo htmlentities($marcas[0]['nome'], ENT_QUOTES); ?></option>
+                    <option value="<?php echo htmlentities($marcas[0]['id'], ENT_QUOTES); ?>" selected><?php echo htmlentities($marcas[0]['nome'], ENT_QUOTES); ?></option>
                     <?php foreach($marcas as $marca) :?>
                     <option value="<?php echo htmlentities($marca['id'], ENT_QUOTES);?>" ><?php echo htmlentities($marca['nome'], ENT_QUOTES);?></option>
                     <?php endforeach;?>

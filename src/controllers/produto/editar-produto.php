@@ -9,7 +9,7 @@ $_SESSION['error'] = $erro;
 
 $dados['id'] = filter_var(@$_POST['produto_id'], FILTER_SANITIZE_NUMBER_INT, FILTER_FLAG_STRIP_LOW);
 $dados['user_id'] = $id;
-$dados['marca_id'] = filter_var(@$_POST['marca'], FILTER_SANITIZE_NUMBER_INT, FILTER_FLAG_STRIP_LOW);
+$dados['marca'] = filter_var(@$_POST['marca'], FILTER_SANITIZE_NUMBER_INT, FILTER_FLAG_STRIP_LOW);
 $dados['nome'] = filter_var(@$_POST['nome'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
 $dados['ean'] = filter_var(@$_POST['codigo-de-barras'], FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW);
 $dados['estoque'] = filter_var(@$_POST['estoque'], FILTER_SANITIZE_NUMBER_INT, FILTER_FLAG_STRIP_LOW);
@@ -22,8 +22,9 @@ $dados['estimativa'] = filter_var(@$_POST['estimativa'], FILTER_SANITIZE_NUMBER_
 
 print_r($dados);
 
+$prod_id = $dados['id'];
 try{
-    $cadastrar = Produto::createProduct($dados);
+    $cadastrar = Produto::upDateProduct($id, $prod_id, $dados);
     header('Location: ../dashboard.php');
 }catch(Exception $e){
     echo $e->getMessage();

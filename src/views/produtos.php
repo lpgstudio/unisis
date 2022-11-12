@@ -61,7 +61,7 @@
                                 <a href="editar-produto.php?codigo=<?php echo htmlentities($produto['id'],ENT_QUOTES);?>" title="Editar" style="background-color: var(--edit);">
                                     <i class="fas fa-edit"></i>
                                 </a>
-                                <a href="#" title="Deletar" style="background-color: var(--delete);">
+                                <a href="produto/deletar-produto.php?codigo=<?php echo htmlentities($produto['id'],ENT_QUOTES);?>" title="Deletar" style="background-color: var(--delete);">
                                     <i class="fas fa-trash"></i>
                                 </a>
                             </div>
