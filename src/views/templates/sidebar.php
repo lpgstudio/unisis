@@ -1,7 +1,5 @@
 <nav class="navigation">
-    <span class="home-icon" onclick="menuToggle()">
-        <i class="fas fa-bars"></i>
-    </span>
+    
     <ul class="nav-menu" >
         <li>
             <a href="#" title="Registrar venda" alt="Registrar venda"> <i class="fas fa-cash-register"></i>

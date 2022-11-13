@@ -39,7 +39,7 @@ body{
     position: relative;
     width: min(90% , 1200px);
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
 }
 
@@ -102,6 +102,7 @@ header .logo a{
 header .user-menu {
     display: flex;
     gap: 25px;
+    margin-left: auto;
 }
 
 header .user-menu li{
@@ -202,9 +203,9 @@ nav.navigation.active{
     transition: 0.5s;
 }
 
-nav.navigation .home-icon {
+.home-icon {
     margin-right: 20px;
-    color: var(--cor-primaria);
+    color: var(--cor-secundaria);
     font-size: 22px;
     cursor: pointer;
 }
@@ -725,5 +726,30 @@ dialog p{
     }
     nav.navigation.active {
         width: 250px;
+    }
+}
+
+@media screen and (max-width: 568px){
+    nav.navigation {
+        width: 0px;
+    }
+    .main {
+        width: calc(100% - 0px);
+        left: 0px;
+    }
+
+    .main.active {
+        width: 100%;
+        left: 100%;
+    }
+    nav.navigation.active {
+        width: 100%;
+    }
+
+    .home-icon {
+        margin-right: 20px;
+        color: var(--cor-secundaria);
+        font-size: 22px;
+        cursor: pointer;
     }
 }

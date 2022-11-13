@@ -30,6 +30,34 @@ class Marca extends Model{
         }
     }
 
+    public static function upDateMarca($user_id, $marca_id, $dados = []){
+        $conn = Database::getConnection();
+        $sql = "UPDATE " . self::$tableName . " SET nome = ? WHERE user_id = ? AND id = ?";
+
+        $stmt = $conn->prepare($sql);
+        $params = [
+            $dados['nome'],
+            $user_id,
+            $marca_id
+        ];
+
+        $stmt->bind_param("sii", ...$params);
+        if($stmt->execute()){
+            addSuccessMsg("Marca atualizada com sucesso!");
+            unset($dados);
+        }else{
+            addErrorMsg('Error: '. $conn->error);
+        }
+
+    }
+
+    public static function deleteMarca($user_id, $marca_id){
+        $sql = "DELETE FROM " 
+            . static::$tableName . " WHERE user_id = " . $user_id ." AND id = " . $marca_id;
+        Database::executeSQL($sql);
+        addSuccessMsg('Marca deletada com sucesso.');
+    }
+
     public static function getAll($user_id){
         $objects = [];
         $sql = "SELECT * FROM " . self::$tableName . " WHERE user_id = " .$user_id;

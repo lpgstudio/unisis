@@ -1,5 +1,8 @@
 <header>
     <div class="container">
+    <span class="home-icon" onclick="menuToggle()">
+        <i class="fas fa-bars"></i>
+    </span>
         <div class="logo"><a href="/">SISCOPI</a></div>
         <div class="toggle-user-menu"></div>
         <ul class="user-menu">
