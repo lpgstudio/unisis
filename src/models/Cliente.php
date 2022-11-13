@@ -45,27 +45,26 @@ class Cliente extends Model{
         }
     }
 
-    public static function upDateProduct($user_id, $prod_id, $dados = []){
+    public static function upDateClient($user_id, $cli_id, $dados = []){
         $conn = Database::getConnection();
-        $sql = "UPDATE " . self::$tableName . " SET marca_id = ?, nome = ?, ean = ?, estoque = ?, estoque_min = ?, valor_custo = ?, valor_venda = ?, data_compra = ?, validade = ?, estimativa = ? WHERE user_id = ? AND id = ?";
+        $sql = "UPDATE " . self::$tableName . " SET nome = ?, email = ?, telefone = ?, endereco = ?, numero = ?, complemento = ?, bairro = ?, cidade = ?, birthday = ? WHERE user_id = ? AND id = ?";
 
         $stmt = $conn->prepare($sql);
         $params = [
-            $dados['marca'],
             $dados['nome'],
-            $dados['ean'],
-            $dados['estoque'],
-            $dados['estoque_min'],
-            $dados['valor_custo'],
-            $dados['valor_venda'],
-            $dados['data_compra'],
-            $dados['validade'],
-            $dados['estimativa'],
+            $dados['email'],
+            $dados['telefone'],
+            $dados['endereco'],
+            $dados['numero'],
+            $dados['complemento'],
+            $dados['bairro'],
+            $dados['cidade'],
+            $dados['birthday'],
             $user_id,
-            $prod_id
+            $cli_id
         ];
 
-        $stmt->bind_param("isiiissssiii", ...$params);
+        $stmt->bind_param("ssssissssii", ...$params);
         if($stmt->execute()){
             addSuccessMsg("Cliente atualizado com sucesso!");
             unset($dados);
@@ -75,9 +74,9 @@ class Cliente extends Model{
 
     }
 
-    public static function deleteClient($user_id, $prod_id){
+    public static function deleteClient($user_id, $cli_id){
         $sql = "DELETE FROM " 
-            . static::$tableName . " WHERE user_id = " . $user_id ." AND id = " . $prod_id;
+            . static::$tableName . " WHERE user_id = " . $user_id ." AND id = " . $cli_id;
         Database::executeSQL($sql);
         addSuccessMsg('Cliente deletado com sucesso.');
     }
@@ -86,6 +85,22 @@ class Cliente extends Model{
         $objects = [];
         $conn = Database::getConnection();
         $sql = "SELECT * FROM " . self::$tableName . " WHERE user_id = ". $user_id;
+
+        $result = Database::getResultFromQuery($sql);
+        if($result->num_rows === 0){
+            return null;
+        }else{
+            while($row = $result->fetch_assoc()){
+                array_push($objects, $row);
+            }
+        }
+        return $objects;
+    }
+
+    public static function getOneClient($user_id, $cli_id){
+        $objects = [];
+        $conn = Database::getConnection();
+        $sql = "SELECT * FROM " . self::$tableName . " WHERE user_id = ". $user_id . " AND id = " . $cli_id;
 
         $result = Database::getResultFromQuery($sql);
         if($result->num_rows === 0){
@@ -110,5 +125,17 @@ class Cliente extends Model{
         }
         return "Erro ao processar os dados.";
     }
+
+    public static function getWhats($user_id, $client_fone){
+        if($user_id == $_SESSION['user']->id){
+
+            $endTratado = str_replace(' ', '+', $client_fone);
+
+            return "https://www.google.com.br/maps/place/".$endTratado;
+        }
+        return "Erro ao processar os dados.";
+    }
+
+
     // ...
 }
