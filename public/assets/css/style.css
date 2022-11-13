@@ -677,7 +677,7 @@ dialog p{
 .dash-cards-produtos,.dash-cards-clientes{
     position: relative;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
     gap: 15px;
     margin: 20px 0;
 }
@@ -686,7 +686,7 @@ dialog p{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
+    align-items: stretch;
     padding: 15px 30px;
     border: 2px solid #ccc;
     box-shadow: 0 0 9px 0px #33333380;
@@ -703,12 +703,9 @@ dialog p{
 }
 
 #dashboard .card p{
-    font-weight: 700;
-    font-size:20px;
-    color: var(--cor-primaria);
-    background-color: var(--cor-secundaria);
-    padding: 30px 40px;
-    border-radius: 50%;
+    font-size: 16px;
+    text-align: left;
+    margin: 5px 0;
 }
 
 @media screen and (max-width: 768px){
