@@ -60,3 +60,8 @@ function modalInfoClose(id){
     var modal = document.getElementById(`${id}`);
     modal.close();
 }
+
+function modalInfoAvisos(){
+    var modal = document.getElementById('avisos');
+    modal.classList.toggle('open');
+}

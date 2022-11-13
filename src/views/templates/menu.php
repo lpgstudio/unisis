@@ -3,9 +3,19 @@
         <div class="logo"><a href="/">SISCOPI</a></div>
         <div class="toggle-user-menu"></div>
         <ul class="user-menu">
+            <li class="avisos" onclick="modalInfoAvisos();">
+                <i class="fas fa-info-circle"></i>
+
+                <div id="avisos">
+                    <p>Essa é uma versão BETA do software, atualizações ainda estão sendo feitas.</p>
+                    <p>Caso encontre algum erro ou tenha alguma sugestão de melhoria, por favor entrar em contato via e-mail.</p>
+                    <p><b>contato@lpcode.com.br</b></p>
+                </div>
+            </li>
             <li><a href="logout.php"> <i class="fas fa-sign-out-alt"></i> Sair</a></li>
         </ul>
     </div>
+    
 </header>
 
 

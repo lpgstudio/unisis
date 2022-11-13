@@ -99,6 +99,11 @@ header .logo a{
     font-size: 32px;
 }
 
+header .user-menu {
+    display: flex;
+    gap: 25px;
+}
+
 header .user-menu li{
     list-style: none;
 }
@@ -109,6 +114,36 @@ header .user-menu li a{
     font-family: var(--font-logo);
     font-weight: 400;
     font-size: 20px;
+}
+header .user-menu li.avisos{position: relative;}
+header .user-menu li.avisos i{
+    color: var(--cor-secundaria);   
+    font-size: 20px;
+    cursor: pointer;
+    animation: aviso 1s ease-in-out infinite;
+}
+
+@keyframes aviso {
+    0% {scale: 1;}
+    50% {scale: 1.1;}
+    100% {scale: 1;}
+}
+#avisos{display: none;}
+header .user-menu li.avisos #avisos.open{
+    position: absolute;
+    left: -90px;
+    top: 39px;
+    z-index: 2;
+    background: #fff;
+    border: 2px solid var(--cor-secundaria);
+    border-radius: 10px;
+    padding: 10px;
+    max-width: 200px;
+    display: block;
+}
+
+header .user-menu li.avisos #avisos.open p{
+    font-size: 14px;
 }
 
 header .user-menu li a i{
