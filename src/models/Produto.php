@@ -37,7 +37,7 @@ class Produto extends Model{
             $dados['estimativa'],
         ];
 
-        $stmt->bind_param("iiissiissssi", ...$params);
+        $stmt->bind_param("iiissiiddssi", ...$params);
         if($stmt->execute()){
             addSuccessMsg("Produto cadastrado com sucesso!");
             unset($dados);
@@ -68,7 +68,7 @@ class Produto extends Model{
             $prod_id
         ];
 
-        $stmt->bind_param("isiiissssiii", ...$params);
+        $stmt->bind_param("isiiiddssiii", ...$params);
         if($stmt->execute()){
             addSuccessMsg("Produto atualizado com sucesso!");
             unset($dados);

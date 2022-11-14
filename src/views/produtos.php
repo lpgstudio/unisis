@@ -80,7 +80,7 @@
                             <p><b>Valor de venda:</b> R$ <?php echo  htmlentities($produto['valor_venda'],ENT_QUOTES);?></p>
                             <p><b>Lucro estimado:</b> R$ <?php
                                  $lucro = floatval($produto['valor_venda']) - floatval($produto['valor_custo']); 
-                                 $porcento = ($lucro /floatval($produto['valor_venda']))*100 ; 
+                                 if($produto['valor_venda'] > 0){$porcento = ($lucro /floatval($produto['valor_venda']))*100 ;}else{$porcento = "0";} 
                                  echo number_format(htmlentities($lucro,ENT_QUOTES), 2, ',', '.') 
                                     . " (" .number_format($porcento , 2, ',', '.')."%)"; ?>
                             </p>

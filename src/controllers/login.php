@@ -5,7 +5,7 @@ session_start();
 $exception = null;
 
 if(count($_POST) > 0){
-    if(!filter_var($dados['email'], FILTER_VALIDATE_EMAIL)){
+    if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
         $erros['email'] = "E-mail inválido.";
         addErrorMsg('E-mail inválido');
     }else{
