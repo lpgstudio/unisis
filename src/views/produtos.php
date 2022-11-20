@@ -40,7 +40,7 @@
                         </td>
 
                         <td data-title="Valor de venda">
-                            <?php echo "R$ ". htmlentities($produto['valor_venda'],ENT_QUOTES);?>
+                            <?php echo "R$ ". number_format(htmlentities($produto['valor_venda'],ENT_QUOTES), 2, ',', '.');?>
                         </td>
 
                         <td data-title="Validade">
@@ -76,8 +76,8 @@
                             <p><b>Código de barras:</b> <?php echo  htmlentities($produto['ean'],ENT_QUOTES);?></p>
                             <p><b>Quantidade em estoque:</b> <?php echo  htmlentities($produto['estoque'],ENT_QUOTES);?></p>
                             <p><b>Aleta de estoque baixo:</b> <?php echo  htmlentities($produto['estoque_min'],ENT_QUOTES);?></p>
-                            <p><b>Valor de custo:</b> R$ <?php echo  htmlentities($produto['valor_custo'],ENT_QUOTES);?></p>
-                            <p><b>Valor de venda:</b> R$ <?php echo  htmlentities($produto['valor_venda'],ENT_QUOTES);?></p>
+                            <p><b>Valor de custo:</b> R$ <?php echo  number_format(htmlentities($produto['valor_custo'],ENT_QUOTES), 2, ',', '.');?></p>
+                            <p><b>Valor de venda:</b> R$ <?php echo  number_format(htmlentities($produto['valor_venda'],ENT_QUOTES), 2, ',', '.');?></p>
                             <p><b>Lucro estimado:</b> R$ <?php
                                  $lucro = floatval($produto['valor_venda']) - floatval($produto['valor_custo']); 
                                  if($produto['valor_venda'] > 0){$porcento = ($lucro /floatval($produto['valor_venda']))*100 ;}else{$porcento = "0";} 
